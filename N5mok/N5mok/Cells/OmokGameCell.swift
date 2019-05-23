@@ -8,20 +8,44 @@
 
 import UIKit
 
+protocol ResetDelegate {
+    func resetBtn()
+}
+
 class OmokGameCell: UICollectionViewCell {
     
-    
+    var delegate: ResetDelegate?
     
     let scrollBtn = UIButton()
+    
+    let winnerLabel: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = l.font.withSize(50)
+        l.layer.borderWidth = 1
+        l.textAlignment = .center
+        l.isHidden = true
+        return l
+    }()
+    
+    let whosTurn: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.font = l.font.withSize(50)
+        l.layer.borderWidth = 1
+        l.text = "Player 1"
+        l.textAlignment = .center
+        return l
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.backgroundColor = .yellow
-        
-        
         setAutoLayout()
         configure()
-        
+        self.addSubview(map)
+        self.delegate = map
+        map.delegate = self
     }
     
     
@@ -50,4 +74,20 @@ class OmokGameCell: UICollectionViewCell {
         
     }
     
+}
+
+
+extension OmokGameCell: ChangePlayerDelegate {
+    func draw() {
+        winnerLabel.isHidden = false
+        winnerLabel.text = "무승부"
+    }
+    
+    func winner(_ who: Bool) {
+        winnerLabel.isHidden = false
+        winnerLabel.text = who ? "흑돌 승!!!" : "백돌 승!!!"
+    }
+    func changePlayer(_ state: Bool) {
+        whosTurn.text = state ? "Player 2" : "Player 1"
+    }
 }

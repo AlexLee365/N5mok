@@ -79,12 +79,12 @@ class PlayGameVC: UIViewController {
     func configure() {
         timerMessageLabel.textAlignment = .center
         timerMessageLabel.textColor = .black
-        timerMessageLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        timerMessageLabel.font = UIFont.boldSystemFont(ofSize: 20)
         timerMessageLabel.text = "남은시간"
         
         timerLabel.textAlignment = .center
         timerLabel.textColor = .black
-        timerLabel.font = UIFont.systemFont(ofSize: 20)
+        timerLabel.font = UIFont.systemFont(ofSize: 18)
         timerLabel.text = ""
         
     }
@@ -102,7 +102,7 @@ class PlayGameVC: UIViewController {
             layout.scrollDirection = .horizontal
             
             omokCollectionView.translatesAutoresizingMaskIntoConstraints = false
-            omokCollectionView.topAnchor.constraint(equalTo: safeGuide.topAnchor, constant: 100).isActive = true
+            omokCollectionView.topAnchor.constraint(equalTo: safeGuide.topAnchor, constant: 120).isActive = true
             omokCollectionView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor).isActive = true
             omokCollectionView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor).isActive = true
             omokCollectionView.bottomAnchor.constraint(equalTo: safeGuide.bottomAnchor).isActive = true

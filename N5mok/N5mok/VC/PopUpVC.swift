@@ -89,14 +89,16 @@ class PopUpVC: UIViewController {
         switch sender.tag {
         case 1:
             dbRef.child("Users").child(vs).updateChildValues(["vs":playerID])
+            dbRef.child("Users").child(playerID).updateChildValues(["turn":true])
+            dbRef.child("Users").child(vs).updateChildValues(["turn":false])
             initializePlayer(text: "\(vs)님과 오목을 시작합니다.") {
                 ()
             }
-            present(playGameVC, animated: true, completion: {
-//                self.dismiss(animated: true, completion: {
-//                    ()
-//                })
-            })
+            dismiss(animated: true)
+            guard let vc = presentingViewController as? FindGameVC else {return}
+            map.vs = vs
+            map.me = playerID
+            vc.present(playGameVC, animated: true)
         case 2:
             resetVS() {
                 self.dismiss(animated: true)

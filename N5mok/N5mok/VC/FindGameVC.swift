@@ -182,7 +182,7 @@ final class FindGameVC: UIViewController {
                     guard let data = data, let image = UIImage(data: data) else { return }
                     
                     DispatchQueue.main.async {
-                        if url == thumbnailImageLink {
+                        if url == profileImageLink {
                             playerProfileImg = image
                             self?.profileImg.image = playerProfileImg
                         }
@@ -248,7 +248,7 @@ extension FindGameVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellBtn = UIButton(type: .custom)
-        cellBtn.frame = CGRect(x: 0, y: 0, width: 40, height: 30)
+        cellBtn.frame = CGRect(x: 0, y: 0, width: 37, height: 37)
         cellBtn.setTitle("한판?", for: .normal)
         cellBtn.tag = indexPath.row
         cellBtn.addTarget(self, action: #selector(FindGameVC.didTapCellBtn(_:)), for: .touchUpInside)

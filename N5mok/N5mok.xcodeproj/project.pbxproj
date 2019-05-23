@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		438163112295043A0007C376 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438163102295043A0007C376 /* TestViewController.swift */; };
 		5203F20422967A19001CD909 /* ChallengerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203F20322967A19001CD909 /* ChallengerVC.swift */; };
+		5203F20822968D79001CD909 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203F20722968D79001CD909 /* Map.swift */; };
+		5203F20A22968DD0001CD909 /* OmokDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203F20922968DD0001CD909 /* OmokDatas.swift */; };
 		5267E56F22945F1700D7FF1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E56E22945F1700D7FF1E /* AppDelegate.swift */; };
 		5267E57422945F1700D7FF1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5267E57222945F1700D7FF1E /* Main.storyboard */; };
 		5267E57622945F1800D7FF1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5267E57522945F1800D7FF1E /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		31ACB2E1BF883393A51C17D6 /* Pods-N5mok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-N5mok.debug.xcconfig"; path = "Target Support Files/Pods-N5mok/Pods-N5mok.debug.xcconfig"; sourceTree = "<group>"; };
 		438163102295043A0007C376 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		5203F20322967A19001CD909 /* ChallengerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengerVC.swift; sourceTree = "<group>"; };
+		5203F20722968D79001CD909 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		5203F20922968DD0001CD909 /* OmokDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmokDatas.swift; sourceTree = "<group>"; };
 		5267E56B22945F1700D7FF1E /* N5mok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = N5mok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5267E56E22945F1700D7FF1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5267E57322945F1700D7FF1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				52FA3E102295B7E90031F377 /* ReadText.swift */,
 				5267E58D229509F300D7FF1E /* Datas.swift */,
 				526DCB532296438200D28DAD /* Message.swift */,
+				5203F20922968DD0001CD909 /* OmokDatas.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				438163102295043A0007C376 /* TestViewController.swift */,
 				5267E587229468F200D7FF1E /* LoginVC.swift */,
 				526DCB472296419A00D28DAD /* PlayGameVC.swift */,
+				5203F20722968D79001CD909 /* Map.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -294,9 +300,11 @@
 				526DCB4A2296421A00D28DAD /* OmokGameCell.swift in Sources */,
 				526DCB4D2296427B00D28DAD /* ChatRoomCell.swift in Sources */,
 				52FA3E0F2295AB900031F377 /* PopUpVC.swift in Sources */,
+				5203F20822968D79001CD909 /* Map.swift in Sources */,
 				526DCB542296438200D28DAD /* Message.swift in Sources */,
 				438163112295043A0007C376 /* TestViewController.swift in Sources */,
 				5267E58A2294695700D7FF1E /* FindGameVC.swift in Sources */,
+				5203F20A22968DD0001CD909 /* OmokDatas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

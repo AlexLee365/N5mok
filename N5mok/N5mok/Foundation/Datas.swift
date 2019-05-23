@@ -88,24 +88,6 @@ func downloadUsersInfo(completion: @escaping (Bool)->()) {
     }
 }
 
-func observeVS(completion: @escaping (Bool)->()) {
-    var flag = false
-    dbRef.child("Users").child("\(playerID)").child("vs").observe(.childChanged) { (snapshot) in
-        print("slkdafjwei;afjasl;dkfjwe;lfkjsda;klfweja;flsadkjf;l")
-//        let value = ((snapshot.value as! [String:String]).values) as! String
-//        print("value: ", value)
-//        guard value != "" else {
-//            flag = false
-//            completion(flag)
-//            return }
-//        flag = true
-//        popUpVC.titleLabel.text = "\(value)님의 도전을 받을래?!"
-//        popUpVC.yesBtn.isEnabled = true
-//        completion(flag)
-    }
-}
-
-
 extension String {
     func toImage() -> UIImage? {
         if let data = Data(base64Encoded: self, options: .ignoreUnknownCharacters) {
