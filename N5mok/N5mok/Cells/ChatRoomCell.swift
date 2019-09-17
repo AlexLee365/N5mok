@@ -172,7 +172,10 @@ class ChatRoomCell: UICollectionViewCell {
     }
     
     func observeMessages() {
-        dbRef.child("Chat").child("messages").observe(.childAdded) { (snapshot) in
+        
+        let messageRoomKey = amIChallenger ? "\(playerID)vs\(playerVS)" : "\(playerVS)vs\(playerID)"      // 도전자의이름이 앞에오는 동일한 키를 가지기위함
+        
+        dbRef.child("Chat").child("messages").child("\(messageRoomKey)").observe(.childAdded) { (snapshot) in
             if let dataArray = snapshot.value as? [String: Any] {
                 print("🔵🔵🔵 obserMessages DataArray: ", dataArray)
                 guard let senderName = dataArray["senderName"] as? String
@@ -193,7 +196,9 @@ class ChatRoomCell: UICollectionViewCell {
         let dataArray: [String: Any] = ["senderName": senderName, "text": text]
         print("🔸🔸🔸 sendMessage DataArray: ", dataArray)
         
-        dbRef.child("Chat").child("messages").childByAutoId().setValue(dataArray) { (error, ref) in
+        let messageRoomKey = amIChallenger ? "\(playerID)vs\(playerVS)" : "\(playerVS)vs\(playerID)"
+        
+        dbRef.child("Chat").child("messages").child("\(messageRoomKey)").childByAutoId().setValue(dataArray) { (error, ref) in
             error == nil ? completion(true) : completion(false)
         }
         

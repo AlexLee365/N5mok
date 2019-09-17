@@ -3,14 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		438163112295043A0007C376 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438163102295043A0007C376 /* TestViewController.swift */; };
+		439DAE032297934700C00718 /* FriendIDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DAE012297934700C00718 /* FriendIDTableViewCell.swift */; };
+		439DAE042297934700C00718 /* FriendIDTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439DAE022297934700C00718 /* FriendIDTableViewCell.xib */; };
 		5203F20422967A19001CD909 /* ChallengerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203F20322967A19001CD909 /* ChallengerVC.swift */; };
 		5203F20822968D79001CD909 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203F20722968D79001CD909 /* Map.swift */; };
 		5203F20A22968DD0001CD909 /* OmokDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203F20922968DD0001CD909 /* OmokDatas.swift */; };
+		5203F20C2296F21C001CD909 /* WinRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203F20B2296F21C001CD909 /* WinRate.swift */; };
 		5267E56F22945F1700D7FF1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E56E22945F1700D7FF1E /* AppDelegate.swift */; };
 		5267E57422945F1700D7FF1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5267E57222945F1700D7FF1E /* Main.storyboard */; };
 		5267E57622945F1800D7FF1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5267E57522945F1800D7FF1E /* Assets.xcassets */; };
@@ -33,10 +35,12 @@
 
 /* Begin PBXFileReference section */
 		31ACB2E1BF883393A51C17D6 /* Pods-N5mok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-N5mok.debug.xcconfig"; path = "Target Support Files/Pods-N5mok/Pods-N5mok.debug.xcconfig"; sourceTree = "<group>"; };
-		438163102295043A0007C376 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		439DAE012297934700C00718 /* FriendIDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendIDTableViewCell.swift; sourceTree = "<group>"; };
+		439DAE022297934700C00718 /* FriendIDTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendIDTableViewCell.xib; sourceTree = "<group>"; };
 		5203F20322967A19001CD909 /* ChallengerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengerVC.swift; sourceTree = "<group>"; };
 		5203F20722968D79001CD909 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		5203F20922968DD0001CD909 /* OmokDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmokDatas.swift; sourceTree = "<group>"; };
+		5203F20B2296F21C001CD909 /* WinRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinRate.swift; sourceTree = "<group>"; };
 		5267E56B22945F1700D7FF1E /* N5mok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = N5mok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5267E56E22945F1700D7FF1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5267E57322945F1700D7FF1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		526DCB4B2296425600D28DAD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				439DAE012297934700C00718 /* FriendIDTableViewCell.swift */,
+				439DAE022297934700C00718 /* FriendIDTableViewCell.xib */,
 				526DCB4C2296427B00D28DAD /* ChatRoomCell.swift */,
 				526DCB4E229642CB00D28DAD /* ChatTableViewCell.swift */,
 				526DCB4F229642CB00D28DAD /* ChatTableViewCell.xib */,
@@ -146,10 +152,10 @@
 				5267E5892294695700D7FF1E /* FindGameVC.swift */,
 				52FA3E0E2295AB900031F377 /* PopUpVC.swift */,
 				5203F20322967A19001CD909 /* ChallengerVC.swift */,
-				438163102295043A0007C376 /* TestViewController.swift */,
 				5267E587229468F200D7FF1E /* LoginVC.swift */,
 				526DCB472296419A00D28DAD /* PlayGameVC.swift */,
 				5203F20722968D79001CD909 /* Map.swift */,
+				5203F20B2296F21C001CD909 /* WinRate.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439DAE042297934700C00718 /* FriendIDTableViewCell.xib in Resources */,
 				5267E57922945F1800D7FF1E /* LaunchScreen.storyboard in Resources */,
 				5267E5812294617E00D7FF1E /* GoogleService-Info.plist in Resources */,
 				526DCB51229642CB00D28DAD /* ChatTableViewCell.xib in Resources */,
@@ -241,20 +248,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-N5mok/Pods-N5mok-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-N5mok/Pods-N5mok-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-N5mok/Pods-N5mok-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -292,6 +290,7 @@
 			files = (
 				5203F20422967A19001CD909 /* ChallengerVC.swift in Sources */,
 				5267E588229468F200D7FF1E /* LoginVC.swift in Sources */,
+				5203F20C2296F21C001CD909 /* WinRate.swift in Sources */,
 				5267E56F22945F1700D7FF1E /* AppDelegate.swift in Sources */,
 				52FA3E112295B7E90031F377 /* ReadText.swift in Sources */,
 				5267E58E229509F300D7FF1E /* Datas.swift in Sources */,
@@ -302,8 +301,8 @@
 				52FA3E0F2295AB900031F377 /* PopUpVC.swift in Sources */,
 				5203F20822968D79001CD909 /* Map.swift in Sources */,
 				526DCB542296438200D28DAD /* Message.swift in Sources */,
-				438163112295043A0007C376 /* TestViewController.swift in Sources */,
 				5267E58A2294695700D7FF1E /* FindGameVC.swift in Sources */,
+				439DAE032297934700C00718 /* FriendIDTableViewCell.swift in Sources */,
 				5203F20A22968DD0001CD909 /* OmokDatas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,7 +453,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5W72YMDK56;
+				DEVELOPMENT_TEAM = 5AVJM299X4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -503,7 +502,7 @@
 					"\"nanopb\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.N5mok";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.AlexLee0427.N5mok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "N5mok/N5mok-Bridging-Header.h";
@@ -521,7 +520,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5W72YMDK56;
+				DEVELOPMENT_TEAM = 5AVJM299X4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -570,7 +569,7 @@
 					"\"nanopb\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.N5mok";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.AlexLee0427.N5mok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "N5mok/N5mok-Bridging-Header.h";

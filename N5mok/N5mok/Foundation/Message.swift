@@ -12,5 +12,4 @@ struct Message{
     var messageKey: String?
     var senderName: String?
     var messageText: String?
-    //    var userId: String?
 }

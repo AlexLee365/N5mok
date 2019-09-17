@@ -25,6 +25,7 @@ class ChallengerVC: UIViewController {
         configure()
         autoLayout()
     }
+    
     private func configure() {
         baseView.backgroundColor = .gray
         baseView.layer.cornerRadius = 10
@@ -90,15 +91,18 @@ class ChallengerVC: UIViewController {
         case 1:
             dbRef.child("Users").child(playerID).updateChildValues(["vs":"ok"])
             dbRef.child("Users").child(vs).updateChildValues(["vs":"ok"])
+            
+            playerVS = vs
+            
             initializePlayer(text: "\(vs)님과 오목을 시작합니다.") {
                 ()
             }
-            dismiss(animated: true)
-            guard let vc = presentingViewController as? FindGameVC else {return}
-            map.vs = vs
-            map.me = playerID
-            vc.present(playGameVC, animated: true)
             
+            dismiss(animated: true)
+            
+            guard let vc = presentingViewController as? FindGameVC else {return}
+            
+            vc.present(playGameVC, animated: true)
         case 2:
             resetVS() {
                 self.dismiss(animated: true)

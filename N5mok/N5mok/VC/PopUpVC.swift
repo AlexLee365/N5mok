@@ -25,6 +25,7 @@ class PopUpVC: UIViewController {
         configure()
         autoLayout()
     }
+    
     private func configure() {
         baseView.backgroundColor = .gray
         baseView.layer.cornerRadius = 10
@@ -89,16 +90,24 @@ class PopUpVC: UIViewController {
         switch sender.tag {
         case 1:
             dbRef.child("Users").child(vs).updateChildValues(["vs":playerID])
-            dbRef.child("Users").child(playerID).updateChildValues(["turn":true])
-            dbRef.child("Users").child(vs).updateChildValues(["turn":false])
+            dbRef.child("Users").child(playerID).updateChildValues(["turn":false])
+            dbRef.child("Users").child(vs).updateChildValues(["turn":true])
+            
+            playerVS = vs
+            
             initializePlayer(text: "\(vs)님과 오목을 시작합니다.") {
                 ()
             }
-            dismiss(animated: true)
-            guard let vc = presentingViewController as? FindGameVC else {return}
-            map.vs = vs
-            map.me = playerID
-            vc.present(playGameVC, animated: true)
+            
+            dbRef.child("Users").child(vs).child("vs").observe(.value) { (snap) in
+                if (snap.value as? String) == "ok" {
+                    self.dismiss(animated: true)
+                    
+                    guard let vc = self.presentingViewController as? FindGameVC else { return }
+                    
+                    vc.present(self.playGameVC, animated: true)
+                }
+            }
         case 2:
             resetVS() {
                 self.dismiss(animated: true)

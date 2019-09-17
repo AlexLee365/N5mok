@@ -10,6 +10,9 @@ import Foundation
 import Firebase
 import UIKit
 
+let notiCenter = NotificationCenter.default
+
+let findFameVC = FindGameVC()
 
 let dbRef = Database.database().reference()
 
@@ -26,6 +29,8 @@ struct User {
     let playerImg: UIImage
     let turn: Bool
     let vs: String
+    let winCount: Int
+    let loseCount: Int
 }
 
 var usersInfo = [User]()
@@ -44,9 +49,20 @@ struct UI {
 }
 
 var playerID: String = ""
+var playerVS: String = ""
+
+var amIChallenger = false {
+    willSet(newValue) {
+        let name = Notification.Name("SendTurn1")
+        notiCenter.post(name: name, object: nil, userInfo: ["turn" : newValue])
+        let name2 = Notification.Name("SendTurn2")
+        notiCenter.post(name: name2, object: nil, userInfo: ["turn" : newValue])
+    }
+}
+
+var firstAmI = false
 
 var playerProfileImg = UIImage()
-
 
 func uploadUserInfo(completion: @escaping ()->()) {
     let data = playerProfileImg.toString()
@@ -55,6 +71,17 @@ func uploadUserInfo(completion: @escaping ()->()) {
     dbRef.child("Users").child(playerID).updateChildValues(["turn":false])
     dbRef.child("Users").child(playerID).updateChildValues(["vs":""])
     dbRef.child("Users").child(playerID).updateChildValues(["loginState":true])
+    dbRef.child("Users").child(playerID).child("winCount").observeSingleEvent(of: .value) { (snap) in
+        if (snap.value as? Int) == nil {
+            dbRef.child("Users").child(playerID).updateChildValues(["winCount":0])
+        }
+    }
+    dbRef.child("Users").child(playerID).child("loseCount").observeSingleEvent(of: .value) { (snap) in
+        if (snap.value as? Int) == nil {
+            dbRef.child("Users").child(playerID).updateChildValues(["loseCount":0])
+        }
+    }
+    
     completion()
     
 }
@@ -77,8 +104,10 @@ func downloadUsersInfo(completion: @escaping (Bool)->()) {
             let img = (detailData["playerImg"] as! String).toImage()
             let myTurn = detailData["turn"] as! Bool
             let enemy = detailData["vs"] as! String
+            let winCount = detailData["winCount"] as! Int
+            let loseCount = detailData["loseCount"] as! Int
             
-            updateUsersInfo.append(User(name: idx, loginState: state, playerImg: img!, turn: myTurn, vs: enemy))
+            updateUsersInfo.append(User(name: idx, loginState: state, playerImg: img!, turn: myTurn, vs: enemy, winCount: winCount, loseCount: loseCount))
         }
         usersInfo = updateUsersInfo
         completion(true)
